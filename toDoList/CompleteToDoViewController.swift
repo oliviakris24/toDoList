@@ -9,14 +9,23 @@
 import UIKit
 
 class CompleteToDoViewController: UIViewController {
-
+    
+    var previousVC = TableViewController()
+    var selectedToDo = ToDo()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = selectedToDo.name
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func completeTapped(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

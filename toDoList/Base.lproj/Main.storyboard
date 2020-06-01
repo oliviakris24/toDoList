@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Cs9-bH-TY8" kind="show" id="Cwa-jJ-ZN2"/>
+                                    <segue destination="Cs9-bH-TY8" kind="show" identifier="moveToComplete" id="Cwa-jJ-ZN2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,14 +106,34 @@
                     <view key="view" contentMode="scaleToFill" id="53B-Gz-gDn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLG-3d-yjW">
+                                <rect key="frame" x="102" y="182" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPR-l5-XRS">
+                                <rect key="frame" x="184" y="308" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="Cs9-bH-TY8" eventType="touchUpInside" id="KJT-eb-vX9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZwF-HU-Oit"/>
                     </view>
                     <navigationItem key="navigationItem" id="aES-i2-Eks"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="BLG-3d-yjW" id="hHH-pD-bKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Nl-5b-13E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="769"/>
+            <point key="canvasLocation" x="1134.7826086956522" y="768.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRj-HK-Gbb">

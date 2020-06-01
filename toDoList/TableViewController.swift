@@ -9,15 +9,29 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+   
+    func createToDos() -> [ToDo] {
+        
+        let swift = ToDo()
+        swift.name = "Learn Swift"
+        swift.important = true
+        
+        let dog = ToDo()
+        dog.name = "Walk the Dog"
+        // important is set to false by default
+        
+        return [swift, dog]
+    }
+    
     var toDos : [ToDo] = []
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         toDos = createToDos()
     }
-        
-    }
+    
 
     // MARK: - Table view data source
 
@@ -35,24 +49,14 @@ class TableViewController: UITableViewController {
         let toDo = toDos[indexPath.row]
 
         if toDo.important {
-            cell.textLabel?.text = "!" + toDo.name
+            cell.textLabel?.text = "❗" + toDo.name
         } else {
             cell.textLabel?.text = toDo.name
         }
         return cell
     }
 
-func createToDos() -> [ToDo] {
-     
-     let swift = ToDo()
-     swift.name = "Learn Swift"
-     swift.important = true
-     
-     let dog = ToDo()
-     dog.name = "Walk the Dog"
-     
-     return [swift, dog]
- }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -97,5 +101,6 @@ func createToDos() -> [ToDo] {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
